@@ -12,6 +12,12 @@ export default defineType({
       type: 'string',
     }),
     defineField({
+      name: 'serviceCategory',
+      title: 'Service Category',
+      description: 'What is the name of the service category',
+      type: 'string',
+    }),
+    defineField({
       name: 'serviceDescription',
       title: 'Service Description',
       description: 'A brief description of the service',

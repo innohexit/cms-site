@@ -26,5 +26,28 @@ export default defineType({
         hotspot: true,
       },
     }),
+    defineField({
+      name: 'whoWeAre',
+      title: 'Who We Are?',
+      description: 'The description of who we are section',
+      type: 'string',
+      validation: (Rule) =>
+        Rule.required().max(120).warning('The description should not cross 120 characters'),
+    }),
+    defineField({
+      name: 'whatWeDoSelected',
+      title: 'What We Do?',
+      description: 'Select 4 2hat we do.',
+      type: 'array',
+      of: [
+        {
+          type: 'reference',
+          to: {
+            type: 'whatWeDo',
+          },
+        },
+      ],
+      validation: (Rule) => Rule.min(4).max(4).warning("You'll have to select 4 of these"),
+    }),
   ],
 })
