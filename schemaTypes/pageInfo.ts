@@ -30,9 +30,9 @@ export default defineType({
       name: 'whoWeAre',
       title: 'Who We Are?',
       description: 'The description of who we are section',
-      type: 'string',
-      validation: (Rule) =>
-        Rule.required().max(120).warning('The description should not cross 120 characters'),
+      type: 'array',
+      of: [{type: 'reference', to: {type: 'whoWeArePoints'}}],
+      validation: (Rule) => Rule.min(4).max(4).warning("You'll have to select 4 of these"),
     }),
     defineField({
       name: 'whatWeDoSelected',
