@@ -37,7 +37,7 @@ export default defineType({
     defineField({
       name: 'whatWeDoSelected',
       title: 'What We Do?',
-      description: 'Select 4 2hat we do.',
+      description: 'Select 4 what we do.',
       type: 'array',
       of: [
         {
@@ -48,6 +48,21 @@ export default defineType({
         },
       ],
       validation: (Rule) => Rule.min(4).max(4).warning("You'll have to select 4 of these"),
+    }),
+    defineField({
+      name: 'selectedServices',
+      title: 'Services ',
+      description: 'Selecte 6 services to show',
+      type: 'array',
+      of: [
+        {
+          type: 'reference',
+          to: {
+            type: 'services',
+          },
+        },
+      ],
+      validation: (Rule) => Rule.min(6).max(6).warning("You'll have to select 6 of these"),
     }),
   ],
 })
