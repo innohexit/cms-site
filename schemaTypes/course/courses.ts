@@ -64,32 +64,12 @@ export default defineType({
       title: 'Course Start',
       description: 'The start date of the course',
       type: 'date',
-      validation: (Rule) =>
-        // @ts-ignore
-        Rule.custom((_, context) => {
-          // @ts-ignore
-          if (context?.document?.courseStatus === 'upcoming') {
-            return 'This would be a required field'
-          } else {
-            return true
-          }
-        }),
     }),
     defineField({
       name: 'courseEnd',
       title: 'Course End',
       description: 'The end date of the course',
       type: 'date',
-      validation: (Rule) =>
-        // @ts-ignore
-        Rule.custom((_, context) => {
-          // @ts-ignore
-          if (context?.document?.courseStatus === 'ongoing') {
-            return 'This would be a required field'
-          } else {
-            return true
-          }
-        }),
     }),
     defineField({
       name: 'courseStack',
