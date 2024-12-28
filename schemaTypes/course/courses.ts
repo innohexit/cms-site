@@ -96,5 +96,11 @@ export default defineType({
       description: 'The crossed price of the course',
       type: 'string',
     }),
+    defineField({
+      name: 'courseFormLink',
+      title: "Course's Enrollment  Link",
+      description: "Course's Enrollment Form Link",
+      type: 'url',
+    }),
   ],
 })
