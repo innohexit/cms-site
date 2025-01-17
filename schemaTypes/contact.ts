@@ -7,76 +7,114 @@ export default defineType({
   type: 'document',
   fields: [
     defineField({
-      name: 'typeOfContact',
-      title: 'Type of Contact',
-      description: 'The type of contact information',
-      type: 'string',
-      options: {
-        list: [
-          {title: 'Email', value: 'email'},
-          {title: 'Phone', value: 'phone'},
-          {title: 'Address', value: 'address'},
-          {title: 'Facebook', value: 'facebook'},
-          {title: 'Twitter', value: 'twitter'},
-          {title: 'Instagram', value: 'instagram'},
-          {title: 'LinkedIn', value: 'linkedin'},
-          {title: 'YouTube', value: 'youtube'},
-          {title: 'Pinterest', value: 'pinterest'},
-          {title: 'TikTok', value: 'tiktok'},
-          {title: 'Snapchat', value: 'snapchat'},
-          {title: 'WhatsApp', value: 'whatsapp'},
-          {title: 'Telegram', value: 'telegram'},
-          {title: 'Signal', value: 'signal'},
-          {title: 'Discord', value: 'discord'},
-          {title: 'Slack', value: 'slack'},
-          {title: 'Messenger', value: 'messenger'},
-          {title: 'Skype', value: 'skype'},
-          {title: 'Zoom', value: 'zoom'},
-          {title: 'Google Meet', value: 'googleMeet'},
-          {title: 'Microsoft Teams', value: 'microsoftTeams'},
-          {title: 'Other', value: 'other'},
-        ],
-      },
+      name: 'inuse',
+      title: 'Default footer',
+      description: 'To use this one ',
+      type: 'boolean',
     }),
     defineField({
-      name: 'contactInformation',
-      title: 'Contact Information',
-      description: 'The contact information',
+      name: 'footerText',
+      title: 'Footer Text',
+      description: 'Short description of the company',
       type: 'string',
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
-      name: 'url',
-      title: 'URL',
-      description: 'The URL for the contact information',
+      name: 'year',
+      title: 'Year',
+      description: 'Year for copyright',
+      type: 'string',
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
+      name: 'facebookUrl',
+      title: 'FB Url',
+      description: 'The URL for the facebook home page',
       type: 'url',
-      hidden: ({parent}) => {
-        const onlinePlatforms = [
-          'facebook',
-          'twitter',
-          'instagram',
-          'linkedin',
-          'youtube',
-          'pinterest',
-          'tiktok',
-          'snapchat',
-          'whatsapp',
-          'telegram',
-          'signal',
-          'discord',
-          'slack',
-          'messenger',
-          'skype',
-          'zoom',
-          'googleMeet',
-          'microsoftTeams',
-        ]
-        return !onlinePlatforms.includes(parent?.typeOfContact)
-      },
       validation: (Rule) =>
         Rule.uri({
           allowRelative: false,
           scheme: ['http', 'https'],
         }),
+    }),
+    defineField({
+      name: 'InstagramUrl',
+      title: 'Instagram Url',
+      description: 'The URL for the instagram home page',
+      type: 'url',
+      validation: (Rule) =>
+        Rule.uri({
+          allowRelative: false,
+          scheme: ['http', 'https'],
+        }),
+    }),
+    defineField({
+      name: 'githubUrl',
+      title: 'Github Url',
+      description: 'The URL for the github home page',
+      type: 'url',
+      validation: (Rule) =>
+        Rule.uri({
+          allowRelative: false,
+          scheme: ['http', 'https'],
+        }),
+    }),
+    defineField({
+      name: 'twitterUrl',
+      title: 'X-twitter Url',
+      description: 'The URL for the X twitter home page',
+      type: 'url',
+      validation: (Rule) =>
+        Rule.uri({
+          allowRelative: false,
+          scheme: ['http', 'https'],
+        }),
+    }),
+    defineField({
+      name: 'linkedInUrl',
+      title: 'LinkedIn Url',
+      description: 'The URL for the linkedin home page',
+      type: 'url',
+      validation: (Rule) =>
+        Rule.uri({
+          allowRelative: false,
+          scheme: ['http', 'https'],
+        }),
+    }),
+    defineField({
+      name: 'youtubeUrl',
+      title: 'YouTube Url',
+      description: 'The URL for the YouTube home page',
+      type: 'url',
+      validation: (Rule) =>
+        Rule.uri({
+          allowRelative: false,
+          scheme: ['http', 'https'],
+        }),
+    }),
+    defineField({
+      name: 'ph1',
+      title: 'Phone Number 1',
+      description: 'First Phone number',
+      type: 'number',
+    }),
+    defineField({
+      name: 'ph2',
+      title: 'Phone Number 2',
+      description: 'Second Phone number',
+      type: 'number',
+    }),
+    defineField({
+      name: 'email',
+      title: 'Email',
+      description: "Email for client's to contact",
+      type: 'email',
+    }),
+    defineField({
+      name: 'address',
+      title: 'Address',
+      description: 'Address to show',
+      type: 'text',
     }),
   ],
 })
