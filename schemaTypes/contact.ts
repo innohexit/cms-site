@@ -38,7 +38,7 @@ export default defineType({
         }),
     }),
     defineField({
-      name: 'InstagramUrl',
+      name: 'instagramUrl',
       title: 'Instagram Url',
       description: 'The URL for the instagram home page',
       type: 'url',
