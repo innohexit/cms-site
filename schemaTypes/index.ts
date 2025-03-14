@@ -5,6 +5,7 @@ import whatWeDo from './whatWeDo'
 import whoWeArePoints from './whoWeArePoints'
 import courses from './course/courses'
 import projects from './projects/project'
+import faqs from './faqs/questions'
 
 export const schemaTypes = [
   contact,
@@ -14,4 +15,5 @@ export const schemaTypes = [
   whoWeArePoints,
   courses,
   projects,
+  faqs,
 ]
